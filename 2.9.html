@@ -1,5 +1,6 @@
 <html>
 <head>
+<title>e-mail: SMTP, POP, IMAP Y SASL 2.9</title> 
 <link rel="stylesheet" href="css\css.css">
 </head>
 <body>
@@ -48,6 +49,70 @@
 </li>
 </nav>
 </div>
+<p>‎  </p>
+<p>‎  </p>
+<p>‎  </p>
+<p>‎  </p>
+<p>‎  </p>
+<font face="verdana">
+<h1> Tema 2.9 e-mail: SMTP, POP, IMAP y SASL</h1>
+<p>‎  </p>
+<h3> SMTP</H3>
+<p>Simple Mail Transfer Protocol (SMTP) es muy usado para enviar correos desde un cliente de correo (Thunderbird, Apple Mail o Microsoft Outlook) a un email server o email hosting. También se usa con bastante frecuencia para reenviar o retransmitir correos de un email server a otro. La habilidad de retransmitir corReos de un servidor a otro es necesaria si el remitente y el receptor tienen distintos proveedores de correo electrónico.</p>
+<p>‎  </p>
+<p>El SMTP, como se especifica en el RFC 5321, usa el puerto 25 como estándar. También puede usar el puerto 587 y el 465. Este último fue introducido como el puerto de elección para el SMTP seguro (SMTPS), que supuestamente ahora es obsoleto. Aunque lo cierto es que sigue siendo usado por varios proveedores de servicios de correo.</p>
+<p>‎  </p>
+<h3>POP</H3>
+<p>‎  </p>
+<P>El Post Office Protocol o POP es usado para recuperar mensajes de correo electrónico de un mail server a un cliente de correo. La última versión de este protocolo es usada en todo el mundo, es la versión, razón por la que por el momento se llama POP3.</p>
+<p>‎  </p>
+<p>POP versión 3, como está especificado en el RFC 1939, soporta extensiones y una gran cantidad de mecanismos de autentificación. Sus características de autentificación son necesarias para prevenir que los usuarios maliciosos se hagan con la autorización para acceder a los mensajes de los usuarios.</p>
+<p>‎  </p>
+<p>Generalmente el POP3 recupera los mensajes de los clientes de esta forma:</p>
+<p>‎  </p>
+<p>1. Conecta el servidor de correo en el puerto 110 (995 para conexiones SSL/TLS).</p>
+<p>‎  </p>
+<p>2. Recupera el correo electrónico.</p>
+<p>‎  </p>
+<p>3. Se deshace de las copias de los mensajes almacenados en el servidor.<p>
+<p>‎  </p>
+<p>4. Se desconecta del servidor en cuestión.</p>
+<p>‎  </p>
+<p>Aunque los clientes POP pueden estar configurados para permitir al servidor continuar almacenando algunas copias del correo descargado. Los pasos antes mencionados son los que se usan con más frecuencia. Dejar copias en el servidor es algo que generalmente se hace con IMAP.</p>
+<p>‎  </p>
+<h3>IMAP</h3>
+<p>‎  </p>
+<p>Internet Message Access Protocol (IMAP), en su versión actual IMAP4, es el protocolo más sofisticado. Les permite a los usuarios agrupar los mensajes relacionados y guardarlos en folders, los cuales luego pueden ser organizador jerárquicamente. También tiene marcadores en los mensajes que nos indican cuando un correo ha sido leído, borrado o reenviado. Además de que les permite a los usuarios realizar búsquedas en su buzón.</p>
+<p>‎  </p>
+<p>Así es como generalmente funciona el protocolo IMAP:</p>
+<p>‎  </p>
+<p>1. Se conecta al servidor de correo en el puerto 143 (o 993 en el caso de conexiones SSL/TLS).</p>
+<p>‎  </p>
+<p>2. Recupera el mensaje de correo electrónico.</p>
+<p>‎  </p>
+<P>3. Se mantiene conectado hasta que la aplicación del cliente de correo cierre y descargue los mensajes deseados.</p>
+<p>‎  </p>
+<p>Cómo mencione anteriormente, en este caso los mensajes no son eliminados del servidor, lo cual tiene mayores implicaciones.<p>
+<p>‎  </p>
+<h3> SASL</H3>
+SASL: Siglas en inglés para Simple Authentication and Security Layer (capa de seguridad y autenticación simple en español) es un framework para autenticación y autorización en protocolos de Internet. Separa los mecanismos de autenticación de los protocolos de la aplicación permitiendo, en teoría, a cualquier protocolo de aplicación que use SASL usar cualquier mecanismo de autenticación soportado por SASL. A pesar de que mediante SASL sólo se maneja la autenticación (y se requieren otros mecanismos --como por ejemplo TLS-- para cifrar el contenido que se transfiere), SASL proporciona medios para un uso negociado del mecanismo elegido. Las especificaciones originales de SASL fueron editadas por John Meyers en el RFC 2222. Este fue hecho obsoleto por el RFC 4422, editado por Alexey Melnikov y Kurt Zeilenga.</p>
+<p>‎  </p>
+<p>Un mecanismo SASL se modela como una sucesión de retos y respuestas. Los mecanismos definidos por SASL incluyen:<p>
+<p>‎  </p>
+<p>• "EXTERNAL", aquí la autenticación está implícita en el contexto (p.ej. para protocolos que ya usan IPsec o TLS).</p>
+<p>‎  </p>
+<p>• "ANONYMOUS", para el acceso de invitados sin autentificar.</p>
+<p>‎  </p>
+<p>• "PLAIN", un mecanismo de contraseña simple en texto plano.</p>
+<p>‎  </p>
+<p>• "OTP" para el sistema que evolucionó de S/KEY</p>
+<p>‎  </p>
+<p>• "NTLM". Se prevé soportar los mecanismos GSSAPI en una familia de nomenclatura de mecanismos.</p>
+<p>‎  </p>
+<p>Los protocolos definen su representación de intercambios SASL con un perfil. Un protocolo tiene un nombre de servicio como "LDAP" en un registro compartido con GSSAPI y Kerberos.</p>
+<p>‎  </p>
+<a href="2.8.html"><- Anterior</a>
 <a href="index.html">Volver al inicio</a>
+<p>‎  </p>
 </body>
 </html>

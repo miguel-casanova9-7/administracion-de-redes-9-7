@@ -1,5 +1,6 @@
 <html>
 <head>
+<title>FTP y TFTP</title>
 <link rel="stylesheet" href="css\css.css">
 </head>
 <body>
@@ -48,6 +49,48 @@
 </li>
 </nav>
 </div>
+<p>‎  </p>
+<p>‎  </p>
+<p>‎  </p>
+<p>‎  </p>
+<p>‎  </p>
+<font face="verdana">
+<h1>Tema 2.5 FTP y TFTP</h1>
+<p>‎  </p>
+<h3>Protocolo FTP</h3>
+<p>‎  </p>
+<p>FTP (sigla en inglés de File Transfer Protocol - Protocolo de Transferencia de Archivos) en informática, es un protocolo de red para la transferencia de archivos entre sistemas conectados a una red TCP (Transmission Control Protocol), basado en la arquitectura cliente-servidor. Desde un equipo cliente se puede conectar a un servidor para descargar archivos desde él o para enviarle archivos, independientemente del sistema operativo utilizado en cada equipo.</p>
+<p>‎  </p>
+<p>El Servicio FTP es ofrecido por la capa de Aplicación del modelo de capas de red TCP/IP al usuario, utilizando normalmente el puerto de red 20 y el 21. Un problema básico de FTP es que está pensado para ofrecer la máxima velocidad en la conexión, pero no la máxima seguridad, ya que todo el intercambio de información, desde el login y password del usuario en el servidor hasta la transferencia de cualquier archivo, se realiza en texto plano sin ningún tipo de cifrado, con lo que un posible atacante puede capturar este tráfico, acceder al servidor, o apropiarse de los archivos transferidos.</p>
+<p>‎  </p>
+<p>Para solucionar este problema son de gran utilidad aplicaciones como scp y sftp, incluidas en el paquete SSH, que permiten transferir archivos pero cifrando todo el tráfico.</p>
+<p>‎  </p>
+<strong><p>Modos de Conexión</p>
+<p>‎  </p>
+<p>• Modo Pasivo:</strong> El servidor siempre crea el canal de datos en su puerto 20, mientras que en el lado del cliente el canal de datos se asocia a un puerto aleatorio mayor que el 1024.</p>
+<p>‎  </p>
+<strong><p>• Modo Activo:</strong> Cuando el cliente envía un comando PASV sobre el canal de control, el servidor FTP le indica por el canal de control, el puerto ( mayor a 1023 del servidor. Ej:2040 ) al que debe conectarse el cliente. El cliente inicia una conexión desde el puerto siguiente al puerto de control (Ej: 1036) hacia el puerto del servidor especificado anteriormente (Ej: 2040).</p>
+<p>‎  </p>
+<p>Antes de cada nueva transferencia, tanto en el modo Activo como en el Pasivo, el cliente debe enviar otra vez un comando de control (PORT o PASV, según el modo en el que haya conectado), y el servidor recibirá esa conexión de datos en un nuevo puerto aleatorio (si está en modo pasivo) o por el puerto 20 (si está en modo activo). En el protocolo FTP existen 5 tipos de transferencia en ASCII y en binarios.</p>
+<p>‎  </p>
+<h3>Protocolo TFTP</h3>
+<p>‎  </p>
+<p>TFTP son las siglas de Trivial file transfer Protocol (Protocolo de transferencia de archivos trivial).
+Es un protocolo de transferencia muy simple semejante a una versión básica de FTP. TFTP a menudo se utiliza para transferir pequeños archivos entre ordenadores en una red, como cuando un terminal X Window o cualquier otro cliente ligero arranca desde un servidor de red.</p>
+<p>‎  </p>
+<p>Algunos detalles del TFTP:</p>
+<p>• No puede listar el contenido de los directorios.</p>
+<p>• No existen mecanismos de autenticación o cifrado.</p>
+<p>• Se utiliza para leer o escribir archivos de un servidor remoto.</p>
+<p>• Soporta tres modos diferentes de transferencia, "netascii", "octet" y "mail", de los que los dos primeros corresponden a los modos "ascii" e "imagen" (binario) del protocolo FTP.</p>
+<p>‎  </p>
+<p>Ya que TFTP utiliza UDP, no hay una definición formal de sesión, cliente y servidor, aunque se considera servidor a aquel que abre el puerto 69 en modo UDP, y cliente a quien se conecta.</P>
+<p>‎  </p>
+<p>Sin embargo, cada archivo transferido vía TFTP constituye un intercambio independiente de paquetes, y existe una relación cliente-servidor informal entre la máquina que inicia la comunicación y la que responde.</p>
+<p>‎  </p>
+<a href="2.4.html"><- Anterior</a>
 <a href="index.html">Volver al inicio</a>
+<a href="2.6.html">Siguiente -></a>
+<p>‎  </p>
 </body>
 </html>
